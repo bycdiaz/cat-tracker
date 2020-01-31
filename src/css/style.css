@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
-h1 {
- color: teal; 
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
 }

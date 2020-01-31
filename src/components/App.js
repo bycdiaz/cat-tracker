@@ -1,12 +1,14 @@
 import React from 'react';
 import Title from './Title.js';
-import EnteredCourses from './EnteredCourses.js';
+import EntryContainer from './EntryContainer.js';
+import Form from './AddCourseForm.js';
 
 function App() {
   return (
     <React.Fragment>
       <Title title="BIOMED Transfer Courses" />
-      <EnteredCourses title="Past Courses"/>
+      <EntryContainer title="Past Courses"/>
+      <Form />
     </React.Fragment>
   );
 }
