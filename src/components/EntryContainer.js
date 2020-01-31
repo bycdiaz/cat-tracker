@@ -9,6 +9,7 @@ class EntryContainer extends React.Component {
         <TransferCourse />
         <TransferCourse />
         <TransferCourse />
+        <button onClick={this.props.loadSampleEntries}>Load Sample Entries</button>
       </React.Fragment>
     )
   }
