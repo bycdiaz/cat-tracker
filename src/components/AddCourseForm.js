@@ -17,7 +17,7 @@ class Form extends React.Component {
       commentRef: this.commentRef.current.value,
       dateRef: new Date(),
     };
-    console.log(entry);
+    this.props.addEntry(entry);
     
     // refresh form
     event.currentTarget.reset();
@@ -25,7 +25,7 @@ class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.createCourse} className="form">
+      <form className="form" onSubmit={this.createCourse}>
         <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
         <input name="stuId" ref={this.stuIdRef} type="text" placeholder="Student ID" />
         <input name="externalCourse" ref={this.externalCourseRef} type="text" placeholder="External Course" />
