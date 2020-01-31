@@ -15,9 +15,11 @@ class Form extends React.Component {
       externalCourseRef: this.externalCourseRef.current.value,
       internalCourseRef: this.internalCourseRef.current.value,
       commentRef: this.commentRef.current.value,
-      dateRef: new Date(),
+      dateRef: (new Date()).toString(),
     };
     this.props.addEntry(entry);
+    console.log(entry);
+    
     
     // refresh form
     event.currentTarget.reset();

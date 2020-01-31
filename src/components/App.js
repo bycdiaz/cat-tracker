@@ -2,8 +2,6 @@ import React from 'react';
 import Title from './Title.js';
 import EntryContainer from './EntryContainer.js';
 import Form from './AddCourseForm.js';
-import sampleCourses from '../sampleCourses.js';
-
 
 class App extends React.Component {
   state = {
@@ -21,15 +19,15 @@ class App extends React.Component {
     })
   };
 
-  loadSampleEntries = () => {
-    this.setState({entries: sampleCourses });
-  }
-
   render(){
     return (
       <React.Fragment>
         <Title title="BIOMED Transfer Courses" />
-        <EntryContainer title="Past Courses" loadSampleEntries={this.loadSampleEntries}/>
+        <EntryContainer
+          title="Past Courses"
+          loadSampleEntries={this.loadSampleEntries}
+          entries={this.state.entries}
+        />
         <Form addEntry={this.addEntry} />
       </React.Fragment>
     );
