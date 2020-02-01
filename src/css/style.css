@@ -17,3 +17,8 @@ code {
   flex-direction: column;
   width: 200px;
 }
+
+.course-entry {
+  border-style: solid;
+  border-color: black;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import Title from './Title.js';
 import EntryContainer from './EntryContainer.js';
 import Form from './AddCourseForm.js';
+import sampleCourses from '../sampleCourses.js';
 
 class App extends React.Component {
   state = {
@@ -19,6 +20,16 @@ class App extends React.Component {
     })
   };
 
+  deleteEntry = (key) => {
+    const entries = { ...this.state.entries };
+    entries[key] = null;
+    this.setState({entries});
+  }
+
+  loadSampleEntries = () => {
+    this.setState({entries: sampleCourses });
+  }
+
   render(){
     return (
       <React.Fragment>
@@ -26,6 +37,7 @@ class App extends React.Component {
         <EntryContainer
           title="Past Courses"
           loadSampleEntries={this.loadSampleEntries}
+          deleteEntry={this.deleteEntry}
           entries={this.state.entries}
         />
         <Form addEntry={this.addEntry} />

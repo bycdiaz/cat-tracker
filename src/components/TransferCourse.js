@@ -13,12 +13,13 @@ class TransferCourse extends React.Component {
 
     return (
       <li className="course-entry">
-        <p>{dateRef}</p>
-        <p>{nameRef}</p>
-        <p>{stuIdRef}</p>
-        <p>{externalCourseRef}</p>
-        <p>{internalCourseRef}</p>
-        <p>{commentRef}</p>
+        <p>Date Entered: {dateRef}</p>
+        <p>Student Name: {nameRef}</p>
+        <p>Student ID: {stuIdRef}</p>
+        <p>External Course: {externalCourseRef}</p>
+        <p>Internal Course: {internalCourseRef}</p>
+        <p>Comment: {commentRef}</p>
+        <button onClick={() => this.props.deleteEntry(this.props.index)}>Delete</button>
       </li>
     )
   }

@@ -6,6 +6,7 @@ class Form extends React.Component {
   externalCourseRef = React.createRef();
   internalCourseRef = React.createRef();
   commentRef = React.createRef();
+  dateRef = React.createRef();
 
   createCourse = (event) => {
     event.preventDefault();
@@ -18,9 +19,6 @@ class Form extends React.Component {
       dateRef: (new Date()).toString(),
     };
     this.props.addEntry(entry);
-    console.log(entry);
-    
-    
     // refresh form
     event.currentTarget.reset();
   }
