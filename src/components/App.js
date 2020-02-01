@@ -3,11 +3,19 @@ import Title from './Title.js';
 import EntryContainer from './EntryContainer.js';
 import Form from './AddCourseForm.js';
 import sampleCourses from '../sampleCourses.js';
+import base from '../base.js';
 
 class App extends React.Component {
   state = {
     entries: {},
   };
+
+  componentDidMount() {
+    this.ref = base.syncState('/', {
+      context: this,
+      state: 'entries',
+    });
+  }
 
   addEntry = (entry) => {
     // copy state
