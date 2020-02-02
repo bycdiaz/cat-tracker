@@ -1,13 +1,14 @@
 import React from 'react';
 import Title from './Title.js';
 import EntryContainer from './EntryContainer.js';
-import Form from './AddCourseForm.js';
+import AddCourseForm from './AddCourseForm.js';
 import sampleCourses from '../sampleCourses.js';
 import base from '../base.js';
 
 class App extends React.Component {
   state = {
     entries: {},
+    formOpen: false,
   };
 
   componentDidMount() {
@@ -42,13 +43,13 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <Title title="BIOMED Transfer Courses" />
+        <AddCourseForm addEntry={this.addEntry} formOpen={this.state.formOpen} />
         <EntryContainer
           title="Past Courses"
           loadSampleEntries={this.loadSampleEntries}
           deleteEntry={this.deleteEntry}
           entries={this.state.entries}
         />
-        <Form addEntry={this.addEntry} />
       </React.Fragment>
     );
   }

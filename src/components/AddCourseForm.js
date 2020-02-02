@@ -1,6 +1,7 @@
 import React from "react";
+import Popup from "reactjs-popup";
 
-class Form extends React.Component {
+class AddCourseForm extends React.Component {
   nameRef = React.createRef();
   stuIdRef = React.createRef();
   externalCourseRef = React.createRef();
@@ -8,7 +9,7 @@ class Form extends React.Component {
   commentRef = React.createRef();
   dateRef = React.createRef();
 
-  createCourse = (event) => {
+  createCourse = (event, close) => {
     event.preventDefault();
     const entry = {
       nameRef: this.nameRef.current.value,
@@ -19,22 +20,26 @@ class Form extends React.Component {
       dateRef: (new Date()).toString(),
     };
     this.props.addEntry(entry);
-    // refresh form
     event.currentTarget.reset();
+    close();
   }
 
   render() {
     return (
-      <form className="form" onSubmit={this.createCourse}>
-        <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-        <input name="stuId" ref={this.stuIdRef} type="text" placeholder="Student ID" />
-        <input name="externalCourse" ref={this.externalCourseRef} type="text" placeholder="External Course" />
-        <input name="internalCourse" ref={this.internalCourseRef} type="text" placeholder="Internal Course" />
-        <textarea name="comment" ref={this.commentRef} placeholder="Comment"></textarea>
-        <button type="submit">+ Add Course</button>
-      </form>
+      <Popup trigger={<button> Add New Transfer Course</button>} position="right center">
+          {close => (
+            <form className="form" onSubmit={(e)=>this.createCourse(e,close)} autocomplete="off">
+              <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
+              <input name="stuId" ref={this.stuIdRef} type="text" placeholder="Student ID" />
+              <input name="externalCourse" ref={this.externalCourseRef} type="text" placeholder="External Course" />
+              <input name="internalCourse" ref={this.internalCourseRef} type="text" placeholder="Internal Course" />
+              <textarea name="comment" ref={this.commentRef} placeholder="Comment"></textarea>
+              <button type="submit">+ Add Course</button>
+            </form>
+          )}
+      </Popup>
     )
   }
 }
 
-export default Form;
+export default AddCourseForm;

@@ -22,3 +22,7 @@ code {
   border-style: solid;
   border-color: black;
 }
+
+h1 {
+  margin-top: 50px;
+}
