@@ -13,7 +13,9 @@ class EntryContainer extends React.Component {
             <TransferCourse
               key={key}
               index={key}
-              details={this.props.entries[key]}
+              entry={this.props.entries[key]}
+              entries={this.props.entries}
+              editEntry={this.props.editEntry}
               deleteEntry={this.props.deleteEntry}
             />
           )).reverse()}

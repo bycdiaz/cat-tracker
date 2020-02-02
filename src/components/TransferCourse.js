@@ -1,4 +1,6 @@
 import React from "react";
+import Popup from "reactjs-popup";
+import EditCourseForm from "./EditCourseForm.js";
 
 class TransferCourse extends React.Component {
   render() {
@@ -9,7 +11,7 @@ class TransferCourse extends React.Component {
       internalCourseRef,
       nameRef,
       stuIdRef,
-     } = this.props.details;
+     } = this.props.entry;
 
     return (
       <li className="course-entry">
@@ -19,6 +21,17 @@ class TransferCourse extends React.Component {
         <p>External Course: {externalCourseRef}</p>
         <p>Internal Course: {internalCourseRef}</p>
         <p>Comment: {commentRef}</p>
+        <Popup
+          trigger={<button onClick={() => this.props.editEntry(this.props.index)}>Edit</button>}
+          position="right top">
+          <EditCourseForm 
+            key={this.props.key}
+            index={this.props.index}
+            entry={this.props.entry}
+            entries={this.props.entries}
+            editEntry={this.props.editEntry}
+          />
+        </Popup>
         <button onClick={() => this.props.deleteEntry(this.props.index)}>Delete</button>
       </li>
     )

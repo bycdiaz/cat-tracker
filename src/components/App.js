@@ -8,7 +8,6 @@ import base from '../base.js';
 class App extends React.Component {
   state = {
     entries: {},
-    formOpen: false,
   };
 
   componentDidMount() {
@@ -16,6 +15,10 @@ class App extends React.Component {
       context: this,
       state: 'entries',
     });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
   }
 
   addEntry = (entry) => {
@@ -28,6 +31,12 @@ class App extends React.Component {
       entries: entries,
     })
   };
+
+  editEntry = (key,updatedEntry) => {
+    const entries = {...this.state.entries};
+    entries[key] = updatedEntry;
+    this.setState({entries});
+  }
 
   deleteEntry = (key) => {
     const entries = { ...this.state.entries };
@@ -47,6 +56,7 @@ class App extends React.Component {
         <EntryContainer
           title="Past Courses"
           loadSampleEntries={this.loadSampleEntries}
+          editEntry={this.editEntry}
           deleteEntry={this.deleteEntry}
           entries={this.state.entries}
         />
