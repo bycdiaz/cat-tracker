@@ -26,9 +26,9 @@ class AddCourseForm extends React.Component {
 
   render() {
     return (
-      <Popup trigger={<button> Add New Transfer Course</button>} position="right center">
+      <Popup trigger={<button> Add New Transfer Course</button>} position="bottom center">
           {close => (
-            <form className="form" onSubmit={(e)=>this.createCourse(e,close)} autocomplete="off">
+            <form className="form" onSubmit={(e)=>this.createCourse(e,close)} autoComplete="off">
               <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
               <input name="stuId" ref={this.stuIdRef} type="text" placeholder="Student ID" />
               <input name="externalCourse" ref={this.externalCourseRef} type="text" placeholder="External Course" />

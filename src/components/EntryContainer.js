@@ -16,7 +16,7 @@ class EntryContainer extends React.Component {
               details={this.props.entries[key]}
               deleteEntry={this.props.deleteEntry}
             />
-          ))}
+          )).reverse()}
         </ul>
       </React.Fragment>
     )
