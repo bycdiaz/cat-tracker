@@ -11,7 +11,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.ref = base.syncState('/', {
+    this.ref = base.syncState('/app', {
       context: this,
       state: 'entries',
     });
