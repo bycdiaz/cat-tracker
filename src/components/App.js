@@ -1,8 +1,8 @@
 import React from 'react';
 import Title from './Title.js';
 import EntryContainer from './EntryContainer.js';
-import AddCourseForm from './AddCourseForm.js';
-import sampleCourses from '../sampleCourses.js';
+import AddCatForm from './AddCatForm.js';
+import sampleCats from '../sampleCats.js';
 import base from '../base.js';
 
 class App extends React.Component {
@@ -45,16 +45,16 @@ class App extends React.Component {
   }
 
   loadSampleEntries = () => {
-    this.setState({entries: sampleCourses });
+    this.setState({entries: sampleCats });
   }
 
   render(){
     return (
       <React.Fragment>
-        <Title title="BIOMED Transfer Courses" />
-        <AddCourseForm addEntry={this.addEntry} formOpen={this.state.formOpen} />
+        <Title title="Cat Tracker" />
+        <AddCatForm addEntry={this.addEntry} formOpen={this.state.formOpen} />
         <EntryContainer
-          title="Past Courses"
+          title="Current Cats"
           loadSampleEntries={this.loadSampleEntries}
           editEntry={this.editEntry}
           deleteEntry={this.deleteEntry}

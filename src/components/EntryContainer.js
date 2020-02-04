@@ -1,16 +1,16 @@
 
 import React from "react";
-import TransferCourse from './TransferCourse.js';
+import Cat from './CatEntry.js';
 
 class EntryContainer extends React.Component {
   render() {
     return (
       <React.Fragment>
         <h3>{this.props.title}</h3>
-        <button onClick={this.props.loadSampleEntries}>Load Sample Entries</button>
+        <button onClick={this.props.loadSampleEntries}>Load Sample Cats</button>
         <ul className="entry-list">
           {Object.keys(this.props.entries).map(key => (
-            <TransferCourse
+            <Cat
               key={key}
               index={key}
               entry={this.props.entries[key]}
