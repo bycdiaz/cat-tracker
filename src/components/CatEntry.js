@@ -3,6 +3,9 @@ import Popup from "reactjs-popup";
 import EditCatForm from "./EditCatForm.js";
 
 class Cat extends React.Component {
+
+
+
   render() {
     const { 
       nameRef,
@@ -14,7 +17,7 @@ class Cat extends React.Component {
       dateRef,
       image,
      } = this.props.entry;
-
+     
     return (
       <li className="cat-entry">
         <img src={image} alt={nameRef} className="cat-image"/>

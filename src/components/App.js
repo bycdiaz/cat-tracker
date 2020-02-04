@@ -4,6 +4,8 @@ import EntryContainer from './EntryContainer.js';
 import AddCatForm from './AddCatForm.js';
 import sampleCats from '../sampleCats.js';
 import base from '../base.js';
+import paw from '../css/images/catpaw.png';
+
 
 class App extends React.Component {
   state = {
@@ -51,6 +53,16 @@ class App extends React.Component {
   render(){
     return (
       <React.Fragment>
+        <img
+          src={paw}
+          alt="cat paw"
+          className="cat-paw"
+          style={{
+            backgroundImage: paw,
+            zIndex: -1,
+            width: 400,
+          }}
+        />
         <Title title="Cat Tracker" />
         <AddCatForm addEntry={this.addEntry} formOpen={this.state.formOpen} />
         <EntryContainer
