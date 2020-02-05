@@ -32,16 +32,16 @@ class AddCatForm extends React.Component {
       <Popup trigger={<button> Add New Cat</button>} position="bottom center">
           {close => (
             <form className="form" onSubmit={(e)=>this.createCat(e,close)} autoComplete="off">
-              <input name="name" ref={this.nameRef} type="text" placeholder="Name" />
-              <input name="stuId" ref={this.IdRef} type="text" placeholder="Cat ID #" />
-              <input name="age" ref={this.ageRef} type="text" placeholder="Age" />
-              <select name="sex" ref={this.sexRef} type="text" placeholder="Sex">
+              <input name="name" ref={this.nameRef} type="text" placeholder="Name" required="required"/>
+              <input name="stuId" ref={this.IdRef} type="text" placeholder="Cat ID #" required="required"/>
+              <input name="age" ref={this.ageRef} type="text" placeholder="Age" required="required"/>
+              <select name="sex" ref={this.sexRef} type="text" placeholder="Sex" required="required">
                 <option value="female">Female</option>
                 <option value="male">Male</option>
               </select>
-              <input name="color" ref={this.colorRef} type="text" placeholder="color" />
-              <textarea name="comment" ref={this.commentRef} placeholder="Comment"></textarea>
-              <button type="submit">+ Add Course</button>
+              <input name="color" ref={this.colorRef} type="text" placeholder="color" required="required"/>
+              <textarea name="comment" ref={this.commentRef} placeholder="Comment" required="required"></textarea>
+              <button type="submit">+ Add Cat</button>
             </form>
           )}
       </Popup>

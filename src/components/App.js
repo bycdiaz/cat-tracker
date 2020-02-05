@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import Title from './Title.js';
 import EntryContainer from './EntryContainer.js';
 import AddCatForm from './AddCatForm.js';

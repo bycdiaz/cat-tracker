@@ -38,12 +38,15 @@ class EditCatForm extends React.Component {
           />
         </p>
         <p>Sex:
-          <input
+          <select
             type="text"
             name="sexRef"
             onChange={this.handleChange}
             defaultValue={this.props.entry.sexRef} 
-          />
+          >
+            <option value="female">Female</option>
+            <option value="male">Male</option>
+          </select>
         </p>
         <p>Color:
           <input
